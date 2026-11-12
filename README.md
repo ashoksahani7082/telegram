@@ -4,14 +4,14 @@ Meena-inspired responsive landing page with animated glass UI, unique Telegram i
 
 ## Project-specific configuration
 
-- Telegram channel ID default: `-3778248565`
+- Telegram channel ID default: `-1003778248565`
 - Meta Pixel ID: supplied separately through `META_PIXEL_ID` (no Meena pixel ID is copied or hardcoded).
 - Channel title: optional `CHANNEL_NAME`.
 
 ## Vercel environment variables
 
 - `TELEGRAM_BOT_TOKEN` — bot token; bot must be channel administrator and allowed to create invite links.
-- `TELEGRAM_CHAT_ID` — optional; defaults to `-3778248565`.
+- `TELEGRAM_CHAT_ID` — optional; defaults to `-1003778248565`.
 - `KV_REST_API_URL` and `KV_REST_API_TOKEN` — Redis REST credentials.
 - `META_PIXEL_ID` — NEW project's browser Pixel and CAPI dataset ID.
 - `META_CAPI_ACCESS_TOKEN` — Meta Conversions API token for that Pixel.
@@ -23,7 +23,7 @@ Meena-inspired responsive landing page with animated glass UI, unique Telegram i
 ## Setup
 
 1. Import this repo into Vercel and configure the environment variables.
-2. Add the bot as administrator in channel `-3778248565` with invite-link permission.
+2. Add the bot as administrator in channel `-1003778248565` with invite-link permission.
 3. Set Telegram webhook to `https://YOUR-DOMAIN/api/telegram`, with `chat_join_request` enabled.
 4. Deploy, test with an ad URL containing UTM parameters and submit a join request through the generated invite link.
 5. Verify Vercel logs and Meta Events Manager. Remove `META_TEST_EVENT_CODE` after testing.
