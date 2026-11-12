@@ -1,6 +1,6 @@
 export default async function handler(req,res){
  if(req.method!=="POST")return res.status(405).json({ok:false,error:"Method not allowed"});
- const token=process.env.TELEGRAM_BOT_TOKEN,chatId=process.env.TELEGRAM_CHAT_ID||"-3778248565",redisUrl=process.env.KV_REST_API_URL,redisToken=process.env.KV_REST_API_TOKEN;
+ const token=process.env.TELEGRAM_BOT_TOKEN,chatId=process.env.TELEGRAM_CHAT_ID||"-1003778248565",redisUrl=process.env.KV_REST_API_URL,redisToken=process.env.KV_REST_API_TOKEN;
  if(!token)return res.status(500).json({ok:false,error:"TELEGRAM_BOT_TOKEN is not configured"});if(!redisUrl||!redisToken)return res.status(500).json({ok:false,error:"Redis environment variables are not configured"});
  try{const body=req.body||{},clean=(v,max=200)=>typeof v==="string"&&v.trim()?v.trim().slice(0,max):null,clickId=crypto.randomUUID().replaceAll("-","");
  const attribution={click_id:clickId,source:clean(body.source),campaign:clean(body.campaign),medium:clean(body.medium),content:clean(body.content),term:clean(body.term),landing_referrer:clean(body.landing_referrer,120),landing_url:clean(body.landing_url,1000),fbp:clean(body.fbp,200),fbc:clean(body.fbc,200),user_agent:clean(body.user_agent,500),created_at:new Date().toISOString()};
